@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from . models import Category, Item
@@ -34,14 +35,14 @@ def detail(request, pk):
         'related_items': related_items
     })
 
-@login_required
+@staff_member_required
 def delete(request, pk):
     item = get_object_or_404(Item, pk=pk, created_by=request.user)
     item.delete()
 
     return redirect('dashboard:index')
 
-@login_required
+@staff_member_required
 def new(request):
     if request.method == "POST":
         form = NewItemForm(request.POST, request.FILES)
@@ -58,8 +59,7 @@ def new(request):
         'title': 'New Item'
     })
 
-
-@login_required
+@staff_member_required
 def edit(request, pk):
     item = get_object_or_404(Item, pk=pk, created_by=request.user)
     if request.method == "POST":
