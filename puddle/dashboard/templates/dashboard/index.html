@@ -7,7 +7,8 @@
         <h2 class="mb-12 text-2xl text-center">My items</h2>
 
         <div class="grid grid-cols-1 sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-3 gap-3">
-            {% for item in items %}
+            {% comment %} {{ items }} {% endcomment %}
+             {% for item in items %}
                 <div>
                     <a href="{% url 'item:detail' item.id %}">
                         <div>
