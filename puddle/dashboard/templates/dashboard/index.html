@@ -7,12 +7,11 @@
         <h2 class="mb-12 text-2xl text-center">My items</h2>
 
         <div class="grid grid-cols-1 sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-3 gap-3">
-            {% comment %} {{ items }} {% endcomment %}
              {% for item in items %}
                 <div>
                     <a href="{% url 'item:detail' item.id %}">
                         <div>
-                            <img src="{{item.image.url}}" class="rounded-t-xl h-600 w-600">
+                            <img src="{{item.image.url}}" class="rounded-t-xl">
                         </div>
 
                         <div class="p-6 bg-white rounded-xl">
@@ -21,7 +20,7 @@
                         </div>
                     </a>
                 </div>
-            {% endfor %}
+        {% endfor %}
         </div>
     </div>
 {% endblock content %}

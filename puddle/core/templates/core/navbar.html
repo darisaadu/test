@@ -21,7 +21,7 @@
             <a href="{% url 'conversation:inbox' %}" class="px-6 py-3 block text-lg font-semibold text-white bg-gray-500 hover:bg-gray-700 rounded-xl">Inbox</a><br>
             <a href="{% url 'core:logout' %}" class="px-6 py-3 block text-lg font-semibold whitespace-nowrap rounded-lg bg-blue-500 text-white hover:bg-blue-700">Log out</a><br>
             {% else %}
-            <a href="{% url 'core:signup' %}" class="px-6 py-3 block text-lg font-semibold text-white bg-teal-500 hover:bg-teal-700 rounded-xl">Sign up</a><br>
+            <a href="{% url 'core:signup' %}" class="px-6 py-3 block text-lg font-semibold text-white bg-teal-500 whitespace-nowrap hover:bg-teal-700 rounded-xl">Sign up</a><br>
             <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg block font-semibold text-white bg-gray-500 hover:bg-gray-700 rounded-xl">Log in</a><br>
             {% endif %}
         </div>
@@ -41,7 +41,7 @@
                     <i class="fa-solid fa-xmark text-gray-600"></i>
                 </button>
             </div>
-            <div class="mt-6">
+            <div class="mt-6 text-center">
                 <a href="{% url 'item:new' %}" class="text-lg block font-semibold hover:text-gray-500">New items</a><br>
                 <a href="{% url 'item:items' %}" class="text-lg block font-semibold hover:text-gray-500">Browse</a><br>
                 {% if request.user.is_authenticated %}
@@ -49,8 +49,8 @@
                 <a href="{% url 'conversation:inbox' %}" class="px-6 py-3 block text-lg font-semibold text-white bg-gray-500 hover:bg-gray-700 rounded-xl">Inbox</a><br>
                 <a href="{% url 'core:logout' %}" class="px-6 py-3 block text-lg font-semibold rounded-lg bg-blue-500 text-white hover:bg-blue-700">Log out</a><br>
                 {% else %}
-                <a href="{% url 'core:signup' %}" class="px-6 py-3 block text-lg w-1/3 block font-semibold text-white bg-teal-500 hover:bg-teal-700 rounded-xl">Sign up</a><br>
-                <a href="{% url 'core:login' %}" class="px-6 py-3 block text-lg w-2/5 block font-semibold text-white bg-gray-500 hover:bg-gray-700 rounded-xl">Log in</a><br>
+                <a href="{% url 'core:signup' %}" class="px-6 py-3 block text-lg block font-semibold text-white bg-teal-500 whitespace-nowrap hover:bg-teal-700 rounded-xl">Sign up</a><br>
+                <a href="{% url 'core:login' %}" class="px-6 py-3 block text-lg block font-semibold text-white bg-gray-500 hover:bg-gray-700 rounded-xl">Log in</a><br>
                 {% endif %}
             </div>
         </div>
